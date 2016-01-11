@@ -15,26 +15,19 @@
       <th><%= model_class.human_attribute_name(:checked_out) %></th>
       <th><%= model_class.human_attribute_name(:checked_in) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>-->
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @gadgets.each do |gadget| %>
       <tr>
         <td><%= gadget.make %></td>
-        <td><%= gadget.model %></td>
+        <td><%= link_to "#{gadget.model}", @gadget %></td>
         <td><%= gadget.os_version %></td>
         <td><%= gadget.format %></td>
         <td><%= gadget.location %></td>
         <!--<td><%= gadget.available %></td>
         <td><%= gadget.checked_out %></td>
         <td><%= gadget.checked_in %></td>-->
-        <td>
-          <%= link_to gadget_path(gadget), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-        </td>
       </tr>
     <% end %>
   </tbody>
