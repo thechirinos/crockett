@@ -21,11 +21,7 @@
     <% @gadgets.each do |gadget| %>
       <tr>
         <td><%= gadget.make %></td>
-<<<<<<< HEAD
-        <td><%= link_to "#{gadget.model}", @gadget %></td>
-=======
         <td><%= link_to "#{gadget.model}", gadget_path(gadget) %></td>
->>>>>>> testing
         <td><%= gadget.os_version %></td>
         <td><%= gadget.format %></td>
         <td><%= gadget.location %></td>
